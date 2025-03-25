@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/yourusername/MyCppProject.git'
+                git 'https://github.com/Masterhuthiu/test-cpro-cmd.git'
             }
         }
         stage('Build') {
