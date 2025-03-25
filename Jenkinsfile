@@ -1,13 +1,21 @@
 pipeline {
-    agent any 
+    agent any
+
     stages {
-    stage('maven install') {
-      steps {
-
-        sh 'mvn clean install'
-
-      }
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/yourusername/MyCppProject.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                bat 'cl main.cpp /EHsc'
+            }
+        }
+        stage('Run') {
+            steps {
+                bat 'main'
+            }
+        }
     }
-
-  }
 }
