@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Masterhuthiu/test-cpro-cmd.git'
+                sh 'git clone https://github.com/Masterhuthiu/test-cpro-cmd.git'
             }
         }
         stage('Build') {
