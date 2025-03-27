@@ -1,20 +1,15 @@
 pipeline {
     agent any
-
     stages {
-        stage('Clone Repository') {
+        stage('Checkout') {
             steps {
-                git 'https://github.com/Masterhuthiu/test-cpro-cmd'
+                git 'https://github.com/your-repo/your-cpp-project.git'
             }
         }
         stage('Build') {
             steps {
-                bat 'cl main.cpp /EHsc'
-            }
-        }
-        stage('Run') {
-            steps {
-                bat 'main'
+                sh 'cmake -S . -B build'
+                sh 'cmake --build build'
             }
         }
     }
